@@ -1,0 +1,37 @@
+#bandeau{text-align: left;
+color: #E26767;
+background-image: url("../bande.png");
+background-size: 100%;
+background-repeat: no-repeat;
+}
+
+h1{text-align: center;
+color: #F33F99;
+background-color: white;
+}
+
+body{background-color: #87CEFA;
+padding: 5px 5px;
+}
+
+#phrase{text-align: center;
+}
+
+#maison{height: 2%;
+width: 2%;
+}
+
+#question {
+margin-bottom: 20px;
+color: #F33F99;
+}
+
+#quiz {
+padding: 10px 50px;
+}
+
+
+
+
+
+

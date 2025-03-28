@@ -1,0 +1,30 @@
+div{text-align: left;
+color: #E26767;
+background-image: url( "../bande.png");
+background-size: 100%;
+background-repeat: no-repeat;
+}
+
+h1{text-align: center;
+color: #F33F99;
+}
+
+body{background-color: #F8DBDB;
+padding: 20px 50px;
+}
+
+table{border-collapse: separate;
+border: 5px solid white;
+}
+
+#image{heigth: 10%;
+width: 10%;
+}
+
+#maison{heigth: 2%;
+width: 2%;
+}
+
+#acteur{heigth: 8%;
+width: 15%;
+}

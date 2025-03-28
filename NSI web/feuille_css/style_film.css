@@ -1,0 +1,38 @@
+div{text-align: left;
+color: #E26767;
+background-image: url("../bande.png");
+background-size: 100%;
+background-repeat: no-repeat;
+}
+
+h1{text-align: center;
+color: #F33F99;
+background-color: white;
+}
+
+body{background-color: #87CEFA;
+padding: 5px 5px;
+}
+
+h2{text-align: center;
+}
+
+#film{border-collapse: separate;
+border: 5px solid white;
+}
+
+#gerwig{width: 60%;
+height: 55%;
+}
+
+#golden {width: 20%;
+height: 20%
+}
+
+#maison{width: 2%;
+height: 2%
+}
+
+#audio{ width: 3%;
+heigth: 3%;
+}

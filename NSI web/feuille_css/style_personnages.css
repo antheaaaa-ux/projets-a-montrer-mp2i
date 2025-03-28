@@ -1,0 +1,31 @@
+div{text-align: left;
+color: #E26767;
+background-image: url("../bande.png");
+background-size: 100%;
+background-repeat: no-repeat;
+}
+
+
+h1{text-align: center;
+color: #F33F99;
+background-color: white;
+}
+
+body{background-color: #F8DBDB;
+padding: 20px 50px;
+}
+
+table{border-collapse: separate;
+border: 5px solid white;
+}
+
+#phrase{text-align: center;
+}
+
+#perso{height: 30%;
+width: 60%;
+}
+
+#maison{height: 2%;
+width: 2%;
+}

@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Barbie le film du siècle</title>
+	<link rel="icon" href="image_onglet_barbie.ico" type="image/ico" />
+    <link rel="stylesheet" href="feuille_css/style_quiz.css" type="text/css" />
+    <meta charset="utf-8">
+  </head>
+  <body>
+  <div id="bandeau">
+	<a href="Accueil_Barbie.html" target="_blank">
+    <img id="maison" src="maison.png" alt="image d'une maison d'acceuil">
+    </a><br><br><br>
+    <h3> <a href="Le_film.html">Le film</a> </h3><br>
+	<h3> <a href="Les_personnages.html">Les personnages</a> </h3><br>
+  </div>
+   <br><h1>Quiz</h1><br>
+    <h3 id="phrase"><i>Êtes-vous prêt à rejoindre BarbieLand ?</i></h3>
+    <h3 id="phrase"><i>Vérifions ça !</i></h3>
+
+<div id="quiz">
+    <h3 id="question" class="question"></h3>
+    <h3 id="options"></h3>
+   <input id="valider" type="button" name="valider" onclick="valider()" value="Tu valides ?">
+</div>
+<audio id="audio" src="5514.mp3"></audio>
+<script>
+const questions = [
+    {
+        question: "Qui a réalisé le film Barbie ?",
+        options: ["Margot Robbie", "Greta Gerwig", "Noah Baumbach", "Ryan Gosling"],
+        answer: "Greta Gerwig"
+    },
+    {
+        question: "Qui s'est occupé des costumes de film?",
+        options: ["Andrew Wyatt", "Chanel", "Jacqueline Durran", "Noah Baumbach"],
+        answer: "Jacqueline Durran"
+    },
+    {
+        question: "Quelle célèbre artiste a chanté dans ce film?",
+        options: ["Dua Lipa", "Taylor Swift", "Beyoncé", "Céline Dion"],
+        answer: "Dua Lipa"
+    },
+    {
+        question: "Dans quel monde vivent les barbies?",
+        options: ["Le Pays imaginaire", "Malibu en Californie", "Le vrai monde", "Barbieland"],
+        answer: "Barbieland"
+    },
+    {
+        question: "Qui est Ruth Handler?",
+        options: ["La soeur de Barbie", "La créatrice de Barbie", "La fille de Gloria", "La barbie Présidente"],
+        answer: "La créatrice de Barbie"
+    },
+    {
+        question: "Qui est incarnée par Kate McKinnon?",
+        options: ["Barbie Bizarre", "Barbie", "Gloria", "Sasha"],
+        answer: "Barbie Bizarre"
+    },
+    {
+        question: "Pourquoi Barbie a été interdit Viêt Nam?",
+        options: ["A cause d'une carte qui semble montrer la ligne en neuf traits", "Parce-qu'il promeut « l'homosexualité et la transformation sexuelle »", "Car il est «trop féministe»", "Parce-qu'il est nul"],
+        answer: "A cause d'une carte qui semble montrer la ligne en neuf traits"
+    },
+    {
+        question: "Combien de nominations a reçu le film au Golden Globes 2024?",
+        options: ["3", "9", "6", "2"],
+        answer: "9"
+    },
+    {
+        question: "Qui a reçu le prix de la meilleure musique aux Critics Choice Awards récemment?",
+        options: ["Ryan Gosling", "Billie Eilish ", "Dua Lipa", "Ice Spice"],
+        answer: "Ryan Gosling"
+    },
+    {
+        question: "Finalement, qu'est ce que rejette le film Barbie?",
+        options: ["Les hommes", "Les femmes", "La beauté", "La perfection"],
+        answer: "La perfection"
+    },
+];
+
+const quiz = document.getElementById("quiz");
+const questionElement = document.getElementById("question");
+const optionsElement = document.getElementById("options");
+const submitButton = document.getElementById("valider");
+
+let indexQuestionActuelle = 0;
+let score = 0;
+
+function afficherQuestion(question) {
+    questionElement.textContent = question.question;
+    optionsElement.innerHTML = "";
+    question.options.forEach(option => {
+        const boutonOption = document.createElement("button");
+        boutonOption.textContent = option;
+        boutonOption.addEventListener("click", () => {
+            if (option === question.answer) {
+                score++;
+            }
+            boutonOption.disabled = true; 
+        });
+        optionsElement.appendChild(boutonOption);
+    });
+}
+
+function afficherQuestionSuivante() {
+    indexQuestionActuelle++;
+    if (indexQuestionActuelle < questions.length) {
+        afficherQuestion(questions[indexQuestionActuelle]);
+    } else {       
+        audio.play();
+        setTimeout(function() {
+        alert ("J'ESPERE QUE VOUS AVEZ EU 10/10");
+        quiz.innerHTML = `<h2>Votre score est de : ${score} sur ${questions.length}</h2>`;
+        }, audio.duration * 1000);
+    }
+}
+
+afficherQuestion(questions[indexQuestionActuelle]);
+
+submitButton.addEventListener("click", afficherQuestionSuivante);
+
+
+</script>
